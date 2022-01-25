@@ -13,11 +13,6 @@
     <link href="{{asset('panel')}}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="{{asset('panel')}}/assets/css/icons.css" rel="stylesheet" type="text/css">
     <link href="{{asset('panel')}}/assets/css/style.css" rel="stylesheet" type="text/css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-
-    alpha/css/bootstrap.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </head>
 
 <body class="fixed-left">
@@ -29,10 +24,17 @@
                     <a href="/" class="logo logo-admin"><img src="{{asset('panel')}}/assets/images/logo.png" height="24" alt="logo"></a>
                 </h3>
                 <div class="p-3">
-                    <form class="form-horizontal" action="{{ route('forget-password') }}" method="POST">
+                    <form class="form-horizontal" action="{{ route('updatepassword') }}" method="POST">
                         @csrf
+                        <input type="hidden" name="password_token" value="{{$token}}" />
                         <div class="form-group row">
-                            <div class="col-12"><input class="form-control" type="email" name="email" placeholder="Email"></div>
+                            <div class="col-12"><input class="form-control" type="email" value="{{ $email }}" name="email" placeholder="Email"></div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-12"><input class="form-control" type="password" name="password"  placeholder="New Password"></div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-12"><input class="form-control" type="password" name="c_password" placeholder="Confirm Password"></div>
                         </div>
                         <div class="form-group text-center row m-t-20">
                             <div class="col-12"><button class="btn btn-danger btn-block waves-effect waves-light" type="submit">Send Email</button></div>
@@ -54,16 +56,6 @@
     <script src="{{asset('panel')}}/assets/js/jquery.nicescroll.js"></script>
     <script src="{{asset('panel')}}/assets/js/jquery.scrollTo.min.js"></script>
     <script src="{{asset('panel')}}/assets/js/app.js"></script>
-    <script>
-        @if (Session::has('message'))
-            toastr.options =
-            {
-            "closeButton" : true,
-            "progressBar" : true
-            }
-            toastr.success("{{ session('message') }}");
-        @endif
-    </script>
 </body>
 
 </html>
