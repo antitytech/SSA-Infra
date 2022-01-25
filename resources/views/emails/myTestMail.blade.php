@@ -133,7 +133,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td style="-ms-text-size-adjust: 100%; -ms-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; color: #9095A2; font-family: 'https://d1pgqke3goo8l6.cloudfront.net/DFcmHWqyT2CXk2cfz1QB_wordmark.png Std', 'Helvetica', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; font-size: 15px; font-smoothing: always; font-style: normal; font-weight: 400; letter-spacing: 0; line-height: 24px; mso-line-height-rule: exactly; text-decoration: none; vertical-align: top; width: 100%;">
-                                                        If you have any questions or concerns, we're here to help. Contact us via our <a data-click-track-id="1053" href="https://zrsgaming.eu/contact-us" style="font-weight: 500; color: #FFFFFF" target="_blank">Help Center</a>.
+                                                        If you have any questions or concerns, we're here to help. Contact us via our <a data-click-track-id="1053" href="" style="font-weight: 500; color: #FFFFFF" target="_blank">Help Center</a>.
                                                     </td>
                                                 </tr>
                                                 <tr>
