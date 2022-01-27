@@ -28,6 +28,10 @@ class UsersController extends Controller
     {
         return view('user.auth.forget');
     }
+    public function change()
+    {
+        return view('user.auth.changePassword');
+    }
     public function platforms()
     {
         return view('user.platform.table');
@@ -124,7 +128,7 @@ class UsersController extends Controller
         }
         return redirect()->back()->with('error', 'Email or Password is Invalid!');
     }
-    public function updatePassword(Request $request)
+    public function changePassword (Request $request)
     {
 
         $validator = Validator::make($request->all(), [
@@ -135,12 +139,12 @@ class UsersController extends Controller
             $request->session()->flash('error', 'Form Validation is not correct');
             return redirect()->route('changePassword');
         } else {
-            $id = Auth::user()->id ?? '';
+            $id = Auth::guard('web')->user()->id ?? '';
             $user = User::find($id);
             if (Hash::check($request->password, $user->password)) {
                 $user->password = Hash::make($request->new_password);
                 $user->save();
-                $request->session()->flash('success', 'Password change Successfully');
+                $request->session()->flash('success', 'Password changed Successfully');
                 return redirect()->route('changePassword');
             } else {
                 $request->session()->flash('error', 'Old Password does not match');

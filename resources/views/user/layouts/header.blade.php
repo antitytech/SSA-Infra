@@ -46,7 +46,9 @@
                     <div class="dropdown-item noti-title">
                         <h5>Welcome</h5>
                     </div><a class="dropdown-item" href="/user/profile"><i
-                            class="mdi mdi-account-circle m-r-5 text-muted"></i> {{ Auth::user()->name }}</a>
+                            class="mdi mdi-account-circle m-r-5 text-muted"></i> {{ Auth::guard('web')->user()->name }}</a>
+                            <a class="dropdown-item" href="{{ route('change') }}"><i
+                                class="mdi mdi-key-change m-r-5 text-muted"></i> Change Password</a>
                     <div class="dropdown-divider"></div><a class="dropdown-item" href="/user/logout"><i
                             class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
                 </div>

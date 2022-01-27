@@ -39,9 +39,9 @@ Route::group(['middleware' => 'auth:web'], function () {
     });
 });
 
-Route::get('/user/forget-password', [UsersController::class, 'forget']);
+Route::get('/user/change-password', [UsersController::class, 'change'])->name('change');
 Route::post('/user/verify', [UsersController::class, 'verify'])->name('verifyEmail');
-Route::post('/user/change-password', [UsersController::class, 'changePassword'])->name('changePassword');
+Route::post('/user/password', [UsersController::class, 'changePassword'])->name('changePassword');
 Route::post('/user/authenticate', [UsersController::class, 'authenticate']);
 Route::post('/save', [UsersController::class, 'store'])->name('store');
 Route::get('/user/forget-password', [UsersController::class, 'forget']);
