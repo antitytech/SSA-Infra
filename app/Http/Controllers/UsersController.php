@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
@@ -60,7 +61,25 @@ class UsersController extends Controller
     {
         return view('user.auth.profile');
     }
-
+    public function verify(Request $request)
+    {
+        $request->validate([
+            'otp' => 'required|max:6',
+        ]);
+        $id = Auth::guard('web')->user()->id;
+        $user = Auth::guard('web')->user()->otp == $request->otp;
+        if ($user == true) {
+            $userr = User::find($id);
+            $userr->v_otp = 1;
+            $userr->otp = NULL;
+            $userr->save();
+            return redirect('/user/profile')->with('message', 'Email Verified Successfully!');
+        }
+        else
+        {
+            return redirect()->back()->with('message', 'Otp is Invalid!');
+        }
+    }
     public function logout()
     {
         Auth::logout();
@@ -75,13 +94,19 @@ class UsersController extends Controller
             'email' => 'required|unique:users|max:255',
             'password' => 'required|confirmed|min:6',
         ]);
-
+        $otp = mt_rand(100000, 999999);
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        $user->otp = mt_rand(100000,999999);
+        $user->otp = $otp;
         $user->save();
+
+        Mail::send('emails.verifyemail', [$otp => $otp], function ($message) use ($request) {
+            $message->to($request->email);
+            $message->subject('Verify Email');
+        });
+
         return redirect()->back()->with('message', 'Account Created Successfully!');
     }
 
@@ -98,5 +123,29 @@ class UsersController extends Controller
             return redirect('/');
         }
         return redirect()->back()->with('error', 'Email or Password is Invalid!');
+    }
+    public function updatePassword(Request $request)
+    {
+
+        $validator = Validator::make($request->all(), [
+            'password' => 'required',
+            'new_password' => 'min:5|different:password',
+        ]);
+        if ($validator->fails()) {
+            $request->session()->flash('error', 'Form Validation is not correct');
+            return redirect()->route('changePassword');
+        } else {
+            $id = Auth::user()->id ?? '';
+            $user = User::find($id);
+            if (Hash::check($request->password, $user->password)) {
+                $user->password = Hash::make($request->new_password);
+                $user->save();
+                $request->session()->flash('success', 'Password change Successfully');
+                return redirect()->route('changePassword');
+            } else {
+                $request->session()->flash('error', 'Old Password does not match');
+                return redirect()->route('changePassword');
+            }
+        }
     }
 }

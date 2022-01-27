@@ -230,5 +230,14 @@ mark {
         }
         toastr.error("{{ session('error') }}");
     @endif
+
+    @if (Session::has('message'))
+            toastr.options =
+            {
+            "closeButton" : true,
+            "progressBar" : true
+            }
+            toastr.success("{{ session('message') }}");
+        @endif
 </script>
 @endsection

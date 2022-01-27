@@ -16,25 +16,31 @@
             <div class="card-body">
                 <h3 class="text-center mt-0 m-b-15">
                     <a href="/" class="logo logo-admin"><b>
-                            <h2>Verify Your Email</h2>
+                            <h2>Change Your Password</h2>
                         </b></a>
                 </h3>
 
                 <div class="p-3">
-                    <form class="form-horizontal" action="{{ route('verifyEmail') }}" method="POST">
+                    <form class="form-horizontal" action="{{ route('changePassword') }}" method="POST">
                         @csrf
 
                         <div class="form-group row">
-                            <div class="col-12"><input class="form-control" name="otp" type="text" name="otp"
-                                    required="" placeholder="Enter OTP">
-                                @if ($errors->has('otp'))
-                                    <span class="text-danger">{{ $errors->first('otp') }}</span>
+                            <div class="col-12"><input class="form-control" name="password" type="text" name="otp"
+                                    required="" placeholder="Enter Old Password">
+                                @if ($errors->has('password'))
+                                    <span class="text-danger">{{ $errors->first('password') }}</span>
                                 @endif
                             </div>
+                            <div class="col-12"><input class="form-control" name="new_password" type="text" name="otp"
+                                required="" placeholder="Enter New Password">
+                            @if ($errors->has('new_password'))
+                                <span class="text-danger">{{ $errors->first('new_password') }}</span>
+                            @endif
+                        </div>
                         </div>
                         <div class="form-group text-center row m-t-20">
                             <div class="col-12"><button class="btn btn-danger btn-block waves-effect waves-light"
-                                    type="submit">Verify Email</button></div>
+                                    type="submit">Update</button></div>
                         </div>
                     </form>
                 </div>

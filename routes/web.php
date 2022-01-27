@@ -31,8 +31,6 @@ Route::group(['middleware' => 'auth:web'], function () {
         Route::get('/investment-opportunities', [UsersController::class, 'opportunities'])->name('opportunities');
         Route::get('/request-management', [UsersController::class, 'management'])->name('management');
     });
-
-
     Route::get('/verify-email', [UsersController::class, 'email'])->name('verify.email');
 
     Route::prefix('user')->group(function () {
@@ -41,6 +39,9 @@ Route::group(['middleware' => 'auth:web'], function () {
     });
 });
 
+Route::get('/user/forget-password', [UsersController::class, 'forget']);
+Route::post('/user/verify', [UsersController::class, 'verify'])->name('verifyEmail');
+Route::post('/user/change-password', [UsersController::class, 'changePassword'])->name('changePassword');
 Route::post('/user/authenticate', [UsersController::class, 'authenticate']);
 Route::post('/save', [UsersController::class, 'store'])->name('store');
 Route::get('/user/forget-password', [UsersController::class, 'forget']);

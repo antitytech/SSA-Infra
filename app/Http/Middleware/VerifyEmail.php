@@ -21,7 +21,6 @@ class VerifyEmail
             return redirect()->route('verify.email')->with('error','Verify Your Email!');
         }
         if (Auth::check() && (Auth::user()->profile == '0') ) {
-
             return redirect()->route('profile')->with('error','Complete Your Profile First!');
         }
         else{
