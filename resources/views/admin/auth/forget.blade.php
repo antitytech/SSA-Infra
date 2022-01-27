@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
-    <title>SSA INFRA - User Forget Password</title>
+    <title>SSA INFRA - Admin Forget Password</title>
     <meta content="Admin Dashboard" name="description">
     <meta content="Mannatthemes" name="author">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +21,7 @@
         <div class="card">
             <div class="card-body">
                 <h3 class="text-center mt-0 m-b-15">
-                    <a href="/" class="logo logo-admin"><b><h2>Forget Password</h2></b></a>
+                    <a class="logo logo-admin"><b><h2>Forget Password</h2></b></a>
                 </h3>
                 <div class="p-3">
                     <form class="form-horizontal" action="https://mannatthemes.com/annex/vertical/index.html">

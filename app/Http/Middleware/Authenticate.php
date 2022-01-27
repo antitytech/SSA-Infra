@@ -12,8 +12,14 @@ class Authenticate extends Middleware
      * @param  \Illuminate\Http\Request  $request
      * @return string|null
      */
+
     protected function redirectTo($request)
     {
+        $segment = $request->segment(1);
+        if($segment == 'admin')
+        {
+            return route('admin.login');
+        }
         if (! $request->expectsJson()) {
             return route('login');
         }

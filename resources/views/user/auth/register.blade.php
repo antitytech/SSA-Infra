@@ -27,7 +27,7 @@
         <div class="card">
             <div class="card-body">
                 <h3 class="text-center mt-0 m-b-15">
-                    <a href="/" class="logo logo-admin"><b><h2>SSA INFRA</h2></b></a>
+                    <a href="/" class="logo logo-admin"><b><h2>Register</h2></b></a>
                 </h3>
                 <div class="p-3">
                     <form  action="/save" method="POST">

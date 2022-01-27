@@ -68,6 +68,7 @@ class LinkedInController extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                     'linkedin_id'=> $user->id,
+                    'otp'=> mt_rand(100000,999999),
                     'password' => encrypt('123456dummy')
                 ]);
 
