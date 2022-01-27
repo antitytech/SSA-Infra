@@ -8,12 +8,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin.index');
+        $users = DB::table('users')->count();
+        return view('admin.index', compact('users'));
     }
     public function register()
     {
@@ -115,6 +117,26 @@ class AdminController extends Controller
         if (isset($update_id) && $update_id > 0) {
             $userr = User::find($update_id);
             $userr->status = 1;
+            $userr->save();
+            return redirect()->back()->with('message', 'Status Updated Successfully!');
+        }
+    }
+    public function profile0(Request $request)
+    {
+        $update_id = $request->id;
+        if (isset($update_id) && $update_id > 0) {
+            $userr = User::find($update_id);
+            $userr->profile = 0;
+            $userr->save();
+            return redirect()->back()->with('message', 'Status Updated Successfully!');
+        }
+    }
+    public function profile1(Request $request)
+    {
+        $update_id = $request->id;
+        if (isset($update_id) && $update_id > 0) {
+            $userr = User::find($update_id);
+            $userr->profile = 1;
             $userr->save();
             return redirect()->back()->with('message', 'Status Updated Successfully!');
         }

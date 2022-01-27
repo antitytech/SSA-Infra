@@ -30,21 +30,19 @@
                                 </div>
                                 <div class="col-6 align-self-center text-center">
                                     <div class="m-l-10">
-                                        <h5 class="mt-0 round-inner">$18090</h5>
-                                        <p class="mb-0 text-muted">My Projects Worldwide</p>
+                                        <h5 class="mt-0 round-inner">{{ $users }}</h5>
+                                        <p class="mb-0 text-muted">Total Users</p>
                                     </div>
                                 </div>
                                 <div class="col-3 align-self-end align-self-center">
-                                    <h6 class="m-0 float-right text-center text-success"><a href=""
-                                            style="color: #3cab94 !important;"><i class="mdi mdi-arrow-right"></i> <span>Add
-                                                Projects</span></a></h6>
+                                    <h6 class="m-0 float-right text-center text-success"><a href="/admin/all-users"
+                                            style="color: #3cab94 !important;"><i class="mdi mdi-arrow-right"></i>
+                                            <span>View Users</span></a></h6>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Column -->
-                <!-- Column -->
                 <div class="col-md-6 col-lg-6 col-xl-6">
                     <div class="card m-b-30">
                         <div class="card-body">

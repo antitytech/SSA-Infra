@@ -32,16 +32,16 @@ Route::group(['middleware' => 'auth:web'], function () {
         Route::get('/request-management', [UsersController::class, 'management'])->name('management');
     });
     Route::get('/verify-email', [UsersController::class, 'email'])->name('verify.email');
-
     Route::prefix('user')->group(function () {
         Route::get('/logout', [UsersController::class, 'logout'])->name('logout');
         Route::get('/profile', [UsersController::class, 'profile'])->name('profile');
+        Route::post('/update-password', [UsersController::class, 'changePassword'])->name('changePassword');
     });
 });
 
 Route::get('/user/change-password', [UsersController::class, 'change'])->name('change');
 Route::post('/user/verify', [UsersController::class, 'verify'])->name('verifyEmail');
-Route::post('/user/password', [UsersController::class, 'changePassword'])->name('changePassword');
+
 Route::post('/user/authenticate', [UsersController::class, 'authenticate']);
 Route::post('/save', [UsersController::class, 'store'])->name('store');
 Route::get('/user/forget-password', [UsersController::class, 'forget']);
@@ -84,3 +84,7 @@ Route::get('/admin/login', [AdminController::class, 'signin'])->name('admin.logi
 
 Route::get('/user-status-active/{id}', [AdminController::class, 'status1']);
 Route::get('/user-status-block/{id}', [AdminController::class, 'status0']);
+
+Route::get('/user-profile-active/{id}', [AdminController::class, 'profile1']);
+Route::get('/user-profile-block/{id}', [AdminController::class, 'profile0']);
+
