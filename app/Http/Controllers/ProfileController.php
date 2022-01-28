@@ -48,6 +48,7 @@ class ProfileController extends Controller
         }
         $user->name = $request->name;
         $user->profile = '1';
+        $user->role = 'Individual';
         $user->email = $request->email;
         $user->Phone = $request->Phone;
         $user->Title = $request->Title;

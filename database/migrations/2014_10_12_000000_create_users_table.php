@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('google_id')->nullable();
             $table->string('linkedin_id')->nullable();
             $table->string('image')->nullable();
+            $table->string('role')->nullable();
             $table->string('otp')->nullable();
             $table->string('v_otp')->default(0);
             $table->string('status')->default(1);
