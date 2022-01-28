@@ -45,10 +45,10 @@
                                         <td class="text-center">{{ $user->name }}</td>
                                         <td class="text-center">{{ $user->email }}</td>
                                         <td class="text-center"><a href="">View Profile</a></td>
-                                        @if ($user->profile == 1)
+                                        @if ($user->response == 1)
                                             <td class="text-center"><span class="badge badge-success">Active</span></td>
                                         @endif
-                                        @if ($user->profile == 0)
+                                        @if ($user->response == 0)
                                             <td class="text-center"><span class="badge badge-danger">Blocked</span></td>
                                         @endif
                                         <td class="text-center">

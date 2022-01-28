@@ -5,7 +5,7 @@
 
 @section('extra-heads')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-
-                                        alpha/css/bootstrap.css" rel="stylesheet">
+                                            alpha/css/bootstrap.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
@@ -30,48 +30,53 @@
                         <div class="form-group row">
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <label for="">Name</label>
-                                <input class="form-control" type="text" required="" name="name"
+                                <input class="form-control" type="text"  name="name"
                                     placeholder="Enter Your Name" value="{{ Auth::guard('web')->user()->name ?? '' }}"
                                     readonly>
+                                @if ($errors->has('name'))
+                                    <span class="text-danger">{{ $errors->first('name') }}</span>
+                                @endif
                             </div>
-                            @if ($errors->has('name'))
-                                <span class="text-danger">{{ $errors->first('name') }}</span>
-                            @endif
+
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <label for="">Email</label>
-                                <input class="form-control" type="text" required="" name="email"
+                                <input class="form-control" type="text"  name="email"
                                     placeholder="Enter Your Email" value="{{ Auth::guard('web')->user()->email ?? '' }}"
                                     readonly>
+                                @if ($errors->has('email'))
+                                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                                @endif
                             </div>
-                            @if ($errors->has('email'))
-                                <span class="text-danger">{{ $errors->first('email') }}</span>
-                            @endif
+
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <label for="">Phone</label>
-                                <input class="form-control" type="text" required="" name="Phone"
+                                <input class="form-control" type="text"  name="Phone"
                                     placeholder="Enter Phone">
+                                @if ($errors->has('Phone'))
+                                    <span class="text-danger">{{ $errors->first('Phone') }}</span>
+                                @endif
                             </div>
-                            @if ($errors->has('Phone'))
-                                <span class="text-danger">{{ $errors->first('Phone') }}</span>
-                            @endif
+
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <label for="">Title</label>
-                                <input class="form-control" type="text" required="" name="Title" placeholder="Title">
+                                <input class="form-control" type="text"  name="Title" placeholder="Title">
+                                @if ($errors->has('Title'))
+                                    <span class="text-danger">{{ $errors->first('Title') }}</span>
+                                @endif
                             </div>
-                            @if ($errors->has('title'))
-                                <span class="text-danger">{{ $errors->first('title') }}</span>
-                            @endif
+
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <label for="">Date of Birth</label>
-                                <input class="form-control" type="date" required="" name="DOB" placeholder="Journal Name">
+                                <input class="form-control" type="date"  name="DOB" placeholder="Journal Name">
+                                @if ($errors->has('DOB'))
+                                    <span class="text-danger">{{ $errors->first('DOB') }}</span>
+                                @endif
                             </div>
-                            @if ($errors->has('DOB'))
-                                <span class="text-danger">{{ $errors->first('DOB') }}</span>
-                            @endif
+
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <label for="">Tax residence</label>
                                 <select name="TaxResidence" class="select2 form-control mb-3 custom-select"
@@ -324,8 +329,8 @@
                                     <option value="Zimbabwe">Zimbabwe</option>
                                 </select>
                                 @if ($errors->has('TaxResidence'))
-                                <span class="text-danger">{{ $errors->first('TaxResidence') }}</span>
-                            @endif
+                                    <span class="text-danger">{{ $errors->first('TaxResidence') }}</span>
+                                @endif
                             </div>
 
                         </div>
@@ -582,8 +587,8 @@
                                     <option value="Zimbabwe">Zimbabwe</option>
                                 </select>
                                 @if ($errors->has('CountryResidence'))
-                                <span class="text-danger">{{ $errors->first('CountryResidence') }}</span>
-                            @endif
+                                    <span class="text-danger">{{ $errors->first('CountryResidence') }}</span>
+                                @endif
                             </div>
 
                             <div class="col-lg-6 col-md-6 col-sm-12">
@@ -848,15 +853,15 @@
                         <div class="form-group row">
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <label for="">MAILING ADDRESS</label>
-                                <input class="form-control" type="text" required="" name="MAILINGADDRESS"
+                                <input class="form-control" type="text"  name="MAILINGADDRESS"
                                     placeholder="Enter Mailing Address">
+                                    @if ($errors->has('MAILINGADDRESS'))
+                                    <span class="text-danger">{{ $errors->first('MAILINGADDRESS') }}</span>
+                                @endif
                             </div>
-                            @if ($errors->has('password'))
-                                <span class="text-danger">{{ $errors->first('password') }}</span>
-                            @endif
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <label for="">Address line 1</label>
-                                <input class="form-control" type="text" required="" name="Addressline1"
+                                <input class="form-control" type="text"  name="Addressline1"
                                     placeholder="Enter Address line 1">
                             </div>
                             @if ($errors->has('title'))
@@ -866,7 +871,7 @@
                         <div class="form-group row">
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <label for="">Address line 2</label>
-                                <input class="form-control" type="text" required="" name="Addressline2"
+                                <input class="form-control" type="text"  name="Addressline2"
                                     placeholder="Enter Address line 2">
                             </div>
                             @if ($errors->has('password'))
@@ -874,8 +879,7 @@
                             @endif
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <label for="">City / Town</label>
-                                <input class="form-control" type="text" name="City"
-                                    placeholder="Enter City / Town">
+                                <input class="form-control" type="text" name="City" placeholder="Enter City / Town">
                             </div>
                             @if ($errors->has('title'))
                                 <span class="text-danger">{{ $errors->first('title') }}</span>
@@ -884,7 +888,7 @@
                         <div class="form-group row">
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <label for="">Zip / Postal code</label>
-                                <input class="form-control" type="text" required="" name="Zip"
+                                <input class="form-control" type="text"  name="Zip"
                                     placeholder="Enter Zip / Postal code">
                             </div>
                             @if ($errors->has('password'))
@@ -892,7 +896,7 @@
                             @endif
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <label for="">State / Province / Region</label>
-                                <input class="form-control" type="text" required="" name="State"
+                                <input class="form-control" type="text"  name="State"
                                     placeholder="Enter State / Province / Region">
                             </div>
                             @if ($errors->has('title'))
@@ -1157,11 +1161,35 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <label for="">Passport</label>
-                                <input class="form-control" type="file" required="" name="Passport" placeholder="Passport" multiple>
+                                <input class="form-control" type="file"  name="Passport" placeholder="Passport"
+                                    multiple>
                             </div>
                             @if ($errors->has('Passport'))
                                 <span class="text-danger">{{ $errors->first('Passport') }}</span>
                             @endif
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <label for="">Roles</label>
+                                <select name="ROLES" class="select2 form-control mb-3 custom-select"
+                                    style="width: 100%; height:36px;">
+                                    <option value="Project Developer">Project Developer</option>
+                                    <option value="Asset Owner">Asset Owner</option>
+                                    <option value="Investor">Investor</option>
+                                    <option value="Broker / Agent">Broker / Agent</option>
+                                    <option value="Third Party Due Diligence">Third Party Due Diligence</option>
+                                    <option value="Technical">Technical</option>
+                                    <option value="Environment">Environment</option>
+                                    <option value="Legal">Legal</option>
+                                    <option value="Finance">Finance</option>
+                                    <option value="Accounting">Accounting</option>
+                                    <option value="Taxes">Taxes</option>
+                                    <option value="Investor">Credit rating</option>
+                                </select>
+                                @if ($errors->has('TaxResidence'))
+                                    <span class="text-danger">{{ $errors->first('TaxResidence') }}</span>
+                                @endif
+                            </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-12">

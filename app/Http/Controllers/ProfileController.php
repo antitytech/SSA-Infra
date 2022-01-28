@@ -22,18 +22,32 @@ class ProfileController extends Controller
     public function store(Request $request)
     {
 
-        // $request->validate([
-        //     'name' => 'required|max:35',
-        //     'email' => 'required|unique:users|max:255',
-        //     'password' => 'required|confirmed|min:6',
-        // ]);
-        $user = User::where('email', Auth::guard('web')->user()->email)->first();
+        $request->validate([
+            'name' => 'required|max:35',
+            'Phone' => 'required',
+            'Title' => 'required',
+            'DOB' => 'required',
+            'TaxResidence' => 'required',
+            'CountryResidence' => 'required',
+            'PrimaryCitizenship' => 'required',
+            'MAILINGADDRESS' => 'required',
+            'Addressline1' => 'required',
+            'Addressline2' => 'required',
+            'City' => 'required',
+            'Zip' => 'required',
+            'State' => 'required',
+            'Country' => 'required',
+            'ROLES' => 'required',
+        ]);
+        $email =  Auth::guard('web')->user()->email;
+        $user = User::where('email', $email)->first();
         if ($request->hasfile('Passport')) {
             $imageName = time() . '.' . $request->Passport->extension();
             $user->Passport = $imageName;
             $request->Passport->move(public_path('images'), $imageName);
         }
         $user->name = $request->name;
+        $user->profile = '1';
         $user->email = $request->email;
         $user->Phone = $request->Phone;
         $user->Title = $request->Title;
@@ -48,7 +62,7 @@ class ProfileController extends Controller
         $user->Zip = $request->Zip;
         $user->State = $request->State;
         $user->Country = $request->Country;
-        $user->ROLES = 'Individual';
+        $user->ROLES = $request->ROLES;
         $user->save();
 
         // Mail::send('emails.verifyemail', [ 'otp' => $otp], function ($message) use ($request) {

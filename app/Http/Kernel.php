@@ -65,5 +65,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'UserCheck' => \App\Http\Middleware\UserCheck::class,
         'VerifyEmail' => \App\Http\Middleware\VerifyEmail::class,
+        'NoRedirect' => \App\Http\Middleware\NoRedirect::class,
+
     ];
 }

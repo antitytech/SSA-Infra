@@ -126,7 +126,7 @@ class AdminController extends Controller
         $update_id = $request->id;
         if (isset($update_id) && $update_id > 0) {
             $userr = User::find($update_id);
-            $userr->profile = 0;
+            $userr->response = 0;
             $userr->save();
             return redirect()->back()->with('message', 'Status Updated Successfully!');
         }
@@ -136,7 +136,7 @@ class AdminController extends Controller
         $update_id = $request->id;
         if (isset($update_id) && $update_id > 0) {
             $userr = User::find($update_id);
-            $userr->profile = 1;
+            $userr->response = 1;
             $userr->save();
             return redirect()->back()->with('message', 'Status Updated Successfully!');
         }

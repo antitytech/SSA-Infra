@@ -32,15 +32,20 @@ Route::group(['middleware' => 'auth:web'], function () {
         Route::get('/investment-opportunities', [UsersController::class, 'opportunities'])->name('opportunities');
         Route::get('/request-management', [UsersController::class, 'management'])->name('management');
     });
+    Route::middleware('NoRedirect')->group(function () {
     Route::get('/verify-email', [UsersController::class, 'email'])->name('verify.email');
+    Route::post('/user/verify', [UsersController::class, 'verify'])->name('verifyEmail');
+});
     Route::prefix('user')->group(function () {
+
         Route::get('/logout', [UsersController::class, 'logout'])->name('logout');
         Route::get('/profile', [UsersController::class, 'profile'])->name('profile');
         Route::post('/update-password', [UsersController::class, 'changePassword'])->name('changePassword');
         Route::get('/resend-otp', [UsersController::class, 'resend'])->name('ResendOTP');
         Route::get('/change-password', [UsersController::class, 'change'])->name('change');
-
+        Route::middleware('NoRedirect')->group(function () {
         Route::get('/choose-role', [UsersController::class, 'choose'])->name('choose');
+    });
         Route::get('/as-a-individual', [UsersController::class, 'individual'])->name('individual');
         Route::get('/as-a-company', [UsersController::class, 'company'])->name('company');
         Route::get('/update-profile', [UsersController::class, 'updateprofile'])->name('updateprofile');
@@ -49,7 +54,7 @@ Route::group(['middleware' => 'auth:web'], function () {
 });
 
 
-Route::post('/user/verify', [UsersController::class, 'verify'])->name('verifyEmail');
+
 
 Route::post('/user/authenticate', [UsersController::class, 'authenticate']);
 Route::post('/save', [UsersController::class, 'store'])->name('store');
