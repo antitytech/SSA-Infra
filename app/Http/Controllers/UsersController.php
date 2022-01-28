@@ -52,6 +52,14 @@ class UsersController extends Controller
     {
         return view('user.auth.email');
     }
+    public function choose()
+    {
+        return view('user.auth.select');
+    }
+    public function individual()
+    {
+        return view('user.auth.individual');
+    }
 
     public function opportunities()
     {
