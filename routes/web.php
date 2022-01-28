@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\LinkedInController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -43,6 +44,7 @@ Route::group(['middleware' => 'auth:web'], function () {
         Route::get('/as-a-individual', [UsersController::class, 'individual'])->name('individual');
         Route::get('/as-a-company', [UsersController::class, 'company'])->name('company');
         Route::get('/update-profile', [UsersController::class, 'updateprofile'])->name('updateprofile');
+        Route::post('/update-profilee', [ProfileController::class, 'store'])->name('updateprofilee');
     });
 });
 

@@ -23,6 +23,9 @@ class VerifyEmail
         if (Auth::check() && (Auth::user()->profile == '0') ) {
             return redirect()->route('choose')->with('error','Complete Your Profile First!');
         }
+        if (Auth::check() && (Auth::user()->response == '0') ) {
+            return redirect()->route('profile')->with('error','Admin has to Verify your Profile');
+        }
         else{
             return $next($request);
         }

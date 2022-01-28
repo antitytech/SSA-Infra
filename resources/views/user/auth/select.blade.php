@@ -35,13 +35,13 @@
 @endsection
 @section('extra-scripts')
     <script>
-        @if (Session::has('message'))
+        @if (Session::has('error'))
             toastr.options =
             {
             "closeButton" : true,
             "progressBar" : true
             }
-            toastr.error("{{ session('message') }}");
+            toastr.error("{{ session('error') }}");
         @endif
         @if (Session::has('success'))
             toastr.options =

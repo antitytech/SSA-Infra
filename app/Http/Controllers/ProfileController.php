@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Profile;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -25,9 +27,9 @@ class ProfileController extends Controller
         //     'email' => 'required|unique:users|max:255',
         //     'password' => 'required|confirmed|min:6',
         // ]);
-        $user = new Profile();
+        $user = User::where('email', Auth::guard('web')->user()->email)->first();
         if ($request->hasfile('Passport')) {
-            $imageName = time() . '.' . $request->Image->extension();
+            $imageName = time() . '.' . $request->Passport->extension();
             $user->Passport = $imageName;
             $request->Passport->move(public_path('images'), $imageName);
         }
@@ -46,7 +48,7 @@ class ProfileController extends Controller
         $user->Zip = $request->Zip;
         $user->State = $request->State;
         $user->Country = $request->Country;
-        $user->ROLES = $request->ROLES;
+        $user->ROLES = 'Individual';
         $user->save();
 
         // Mail::send('emails.verifyemail', [ 'otp' => $otp], function ($message) use ($request) {

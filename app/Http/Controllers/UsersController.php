@@ -85,7 +85,7 @@ class UsersController extends Controller
             $userr->v_otp = 1;
             $userr->otp = NULL;
             $userr->save();
-            return redirect('/user/profile')->with('message', 'Email Verified Successfully!');
+            return redirect('/user/choose-role')->with('message', 'Email Verified Successfully!');
         }
         else
         {

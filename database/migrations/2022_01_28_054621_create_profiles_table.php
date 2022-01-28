@@ -15,23 +15,24 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email');
-            $table->string('Phone');
-            $table->string('Title');
-            $table->string('DOB');
-            $table->string('TaxResidence');
-            $table->string('CountryResidence');
-            $table->string('PrimaryCitizenship');
-            $table->string('MAILINGADDRESS');
-            $table->string('Addressline1');
-            $table->string('Addressline2');
-            $table->string('City');
-            $table->string('Zip');
-            $table->string('State');
-            $table->string('Country');
-            $table->string('ROLES');
-            $table->string('Passport');
+            $table->string('userid')->nullable();
+            $table->string('name')->nullable();
+            $table->string('email')->unique();
+            $table->string('Phone')->nullable();
+            $table->string('Title')->nullable();
+            $table->string('DOB')->nullable();
+            $table->string('TaxResidence')->nullable();
+            $table->string('CountryResidence')->nullable();
+            $table->string('PrimaryCitizenship')->nullable();
+            $table->string('MAILINGADDRESS')->nullable();
+            $table->string('Addressline1')->nullable();
+            $table->string('Addressline2')->nullable();
+            $table->string('City')->nullable();
+            $table->string('Zip')->nullable();
+            $table->string('State')->nullable();
+            $table->string('Country')->nullable();
+            $table->string('ROLES')->nullable();
+            $table->string('Passport')->nullable();
             $table->timestamps();
         });
     }
