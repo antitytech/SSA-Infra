@@ -106,12 +106,26 @@ class UsersController extends Controller
         $user->otp = $otp;
         $user->save();
 
-        Mail::send('emails.verifyemail', [$otp => $otp], function ($message) use ($request) {
+        Mail::send('emails.verifyemail', [ 'otp' => $otp], function ($message) use ($request) {
             $message->to($request->email);
             $message->subject('Verify Email');
         });
 
         return redirect()->back()->with('message', 'Account Created Successfully!');
+    }
+    public function resend(Request $request)
+    {
+        $otp = mt_rand(100000, 999999);
+        $email =Auth::guard('web')->user()->email;
+        $user = User::where('email', $email)->first();
+        $user->otp = $otp;
+        $user->save();
+
+        Mail::send('emails.verifyemail', ['otp' => $otp], function ($message) use ($request) {
+            $message->to(Auth::guard('web')->user()->email);
+            $message->subject('Verify Email');
+        });
+        return redirect()->back()->with('success', 'Email Send Successfully!');
     }
 
     public function authenticate(Request $request)

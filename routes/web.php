@@ -36,10 +36,12 @@ Route::group(['middleware' => 'auth:web'], function () {
         Route::get('/logout', [UsersController::class, 'logout'])->name('logout');
         Route::get('/profile', [UsersController::class, 'profile'])->name('profile');
         Route::post('/update-password', [UsersController::class, 'changePassword'])->name('changePassword');
+        Route::get('/resend-otp', [UsersController::class, 'resend'])->name('ResendOTP');
+        Route::get('/change-password', [UsersController::class, 'change'])->name('change');
     });
 });
 
-Route::get('/user/change-password', [UsersController::class, 'change'])->name('change');
+
 Route::post('/user/verify', [UsersController::class, 'verify'])->name('verifyEmail');
 
 Route::post('/user/authenticate', [UsersController::class, 'authenticate']);

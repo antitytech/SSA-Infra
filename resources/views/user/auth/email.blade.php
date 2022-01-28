@@ -36,6 +36,9 @@
                             <div class="col-12"><button class="btn btn-danger btn-block waves-effect waves-light"
                                     type="submit">Verify Email</button></div>
                         </div>
+                        <div class="form-group m-t-10 mb-0 row">
+                            <div class="col-12 m-t-20 text-center"><a href="{{ route('ResendOTP') }}" class="text-muted">Resend Email</a></div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -51,6 +54,14 @@
             "progressBar" : true
             }
             toastr.error("{{ session('message') }}");
+        @endif
+        @if (Session::has('success'))
+            toastr.options =
+            {
+            "closeButton" : true,
+            "progressBar" : true
+            }
+            toastr.success("{{ session('success') }}");
         @endif
     </script>
 @endsection
