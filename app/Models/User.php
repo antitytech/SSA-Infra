@@ -15,20 +15,23 @@ class User extends Authenticatable
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var string[]
      */
+
     protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'google_id',
-        'linkedin_id',
-    ];
+        'name', 'email', 'password',
+        'avatar', 'provider_id', 'provider',
+        'access_token'
+   ];
+
+   //You can also use below statement
+
+   protected $guarded = ['*'];
 
     /**
      * The attributes that should be hidden for serialization.
      *
-     * @var array<int, string>
+     * @var array
      */
     protected $hidden = [
         'password',
@@ -38,9 +41,14 @@ class User extends Authenticatable
     /**
      * The attributes that should be cast.
      *
-     * @var array<string, string>
+     * @var array
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function request()
+    {
+        return $this->hasOne(RequestProject::class , 'user_id');
+    }
 }

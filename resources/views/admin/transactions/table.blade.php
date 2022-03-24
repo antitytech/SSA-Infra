@@ -10,7 +10,7 @@
                     <h4 class="mt-0 header-title">My Transactions</h4>
                     <h4 style="text-align: right"><a href="" class="btn btn-success waves-effect waves-light">Add
                             Transactions</a></h4>
-                    <table id="datatable-buttons" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <table id="datatable-buttons" style="display: block; width: 100%; overflow-x: auto;" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
                             <tr>
                                 <th>Name</th>

@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="col-6 align-self-center text-center">
                                     <div class="m-l-10">
-                                        <h5 class="mt-0 round-inner">$18090</h5>
+                                        <h5 class="mt-0 round-inner">{{ $request_projects }}</h5>
                                         <p class="mb-0 text-muted">My Projects Worldwide</p>
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="col-6 text-center align-self-center">
                                     <div class="m-l-10">
-                                        <h5 class="mt-0 round-inner">562</h5>
+                                        <h5 class="mt-0 round-inner">{{ $Opportunities }}</h5>
                                         <p class="mb-0 text-muted">Investment Opportunities</p>
                                     </div>
                                 </div>
@@ -102,12 +102,12 @@
                                 </div>
                                 <div class="col-6 align-self-center text-center">
                                     <div class="m-l-10">
-                                        <h5 class="mt-0 round-inner">$32874</h5>
+                                        <h5 class="mt-0 round-inner">{{ $platform }}</h5>
                                         <p class="mb-0 text-muted">My Platforms</p>
                                     </div>
                                 </div>
                                 <div class="col-3 align-self-end align-self-center">
-                                    <h6 class="m-0 float-right text-center text-success"><a href=""
+                                    <h6 class="m-0 float-right text-center text-success"><a href="{{ route('add_platforms') }}"
                                             style="color: #3cab94 !important;"><i class="mdi mdi-arrow-right"></i> <span>Add
                                                 Platforms</span></a></h6>
                                 </div>
@@ -124,12 +124,12 @@
                                 </div>
                                 <div class="col-6 align-self-center text-center">
                                     <div class="m-l-10">
-                                        <h5 class="mt-0 round-inner">$32874</h5>
+                                        <h5 class="mt-0 round-inner">{{ $projects }}</h5>
                                         <p class="mb-0 text-muted">My Projects</p>
                                     </div>
                                 </div>
                                 <div class="col-3 align-self-end align-self-center">
-                                    <h6 class="m-0 float-right text-center text-success"><a href=""
+                                    <h6 class="m-0 float-right text-center text-success"><a href="{{ route('add_projects') }}"
                                             style="color: #3cab94 !important;"><i class="mdi mdi-arrow-right"></i> <span>Add
                                                 Projects</span></a></h6>
                                 </div>
@@ -146,7 +146,7 @@
                                 </div>
                                 <div class="col-6 align-self-center text-center">
                                     <div class="m-l-10">
-                                        <h5 class="mt-0 round-inner">$32874</h5>
+                                        <h5 class="mt-0 round-inner">{{ $investments }}</h5>
                                         <p class="mb-0 text-muted">My investments</p>
                                     </div>
                                 </div>

@@ -10,6 +10,7 @@
     <meta content="Admin Dashboard" name="description">
     <meta content="Mannatthemes" name="author">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="{{ asset('images/ssa.png') }}">
     @include('user.layouts.heads')
     @yield('extra-heads')
 </head>

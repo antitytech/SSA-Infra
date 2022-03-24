@@ -9,7 +9,7 @@
     <meta content="Admin Dashboard" name="description">
     <meta content="Mannatthemes" name="author">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="{{ asset('panel') }}/assets/images/favicon.ico">
+     <link rel="shortcut icon" href="{{ asset('images/ssa.png') }}">
     <link href="{{ asset('panel') }}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="{{ asset('panel') }}/assets/css/icons.css" rel="stylesheet" type="text/css">
     <link href="{{ asset('panel') }}/assets/css/style.css" rel="stylesheet" type="text/css">
@@ -76,25 +76,27 @@
                         <div class="form-group row">
                             <div class="col-12">
                                 <div class="custom-control custom-checkbox"><input type="checkbox"
-                                        class="custom-control-input" id="customCheck1"> <label
+                                        class="custom-control-input" id="customCheck1" value="Readed" name="termsConditions"> <label
                                         class="custom-control-label font-weight-normal" for="customCheck1">I accept <a
-                                            href="#" class="text-muted">Terms and Conditions</a></label></div>
+                                            href="#" class="text-muted">Terms and Conditions</a></label>
+                                            </div>
+                                            @if ($errors->has('termsConditions'))
+                                            <span class="text-danger">{{ $errors->first('termsConditions') }}</span>
+                                        @endif
                             </div>
                         </div>
                         <div class="form-group text-center row m-t-20">
-                            <div class="col-12"><button
+                            <div class="col-6" style="margin-left: auto; margin-right: auto;"><button
                                     class="btn btn-danger btn-block waves-effect waves-light"
-                                    type="submit">Register</button></div>
+                                    type="submit">Login</button></div>
                         </div>
                         <div class="form-group text-center row m-t-20">
-                            <div class="col-12"><a class="btn btn-danger btn-block waves-effect waves-light"
-                                    href="{{ url('auth/linkedin') }}"><i class="mdi mdi-linkedin-box"></i> Sign in
-                                    with LinkedIn</a></div>
-                        </div>
-                        <div class="form-group text-center row m-t-20">
-                            <div class="col-12"><a class="btn btn-danger btn-block waves-effect waves-light"
-                                    href="{{ url('auth/google') }}"><i class="mdi mdi-google"></i> Sign in with
-                                    Google</a></div>
+                            <div class="col-6"><a href="{{ route('social.oauth', 'google') }}"><img
+                                        src="{{ asset('images/Google__G__Logo.svg.png') }}" height="50px"
+                                        alt="Google"></a></div>
+                            <div class="col-6"><a href="{{ route('social.oauth', 'linkedin') }}"><img
+                                        src="{{ asset('images/linkedin.png') }}" height="50px" alt="Linkedin"></a>
+                            </div>
                         </div>
                         <div class="form-group m-t-10 mb-0 row">
                             <div class="col-12 m-t-20 text-center"><a href="/user/login" class="text-muted">Already

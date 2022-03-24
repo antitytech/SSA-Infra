@@ -18,9 +18,7 @@
                     </div>
                 </div>
             </div>
-            <!-- end page title end breadcrumb -->
             <div class="row">
-                <!-- Column -->
                 <div class="col-md-6 col-lg-6 col-xl-6">
                     <div class="card m-b-30">
                         <div class="card-body">
@@ -33,11 +31,6 @@
                                         <h5 class="mt-0 round-inner">{{ $users }}</h5>
                                         <p class="mb-0 text-muted">Total Users</p>
                                     </div>
-                                </div>
-                                <div class="col-3 align-self-end align-self-center">
-                                    <h6 class="m-0 float-right text-center text-success"><a href="/admin/all-users"
-                                            style="color: #3cab94 !important;"><i class="mdi mdi-arrow-right"></i>
-                                            <span>View Users</span></a></h6>
                                 </div>
                             </div>
                         </div>
@@ -52,21 +45,14 @@
                                 </div>
                                 <div class="col-6 text-center align-self-center">
                                     <div class="m-l-10">
-                                        <h5 class="mt-0 round-inner">562</h5>
-                                        <p class="mb-0 text-muted">Investment Opportunities</p>
+                                        <h5 class="mt-0 round-inner">{{ $individual }}</h5>
+                                        <p class="mb-0 text-muted">Individual Users</p>
                                     </div>
-                                </div>
-                                <div class="col-3 align-self-end align-self-center">
-                                    <h6 class="m-0 float-right text-center text-success"><a href=""
-                                            style="color: #3cab94 !important;"><i class="mdi mdi-arrow-right"></i> <span>Add
-                                                Opportunities</span></a></h6>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Column -->
-                <!-- Column -->
                 <div class="col-md-6 col-lg-6 col-xl-6">
                     <div class="card m-b-30">
                         <div class="card-body">
@@ -76,21 +62,14 @@
                                 </div>
                                 <div class="col-6 align-self-center text-center">
                                     <div class="m-l-10">
-                                        <h5 class="mt-0 round-inner">7514</h5>
-                                        <p class="mb-0 text-muted">My ongoing transactions</p>
+                                        <h5 class="mt-0 round-inner">{{ $Company }}</h5>
+                                        <p class="mb-0 text-muted">Company Users</p>
                                     </div>
-                                </div>
-                                <div class="col-3 align-self-end align-self-center">
-                                    <h6 class="m-0 float-right text-center text-success"><a href=""
-                                            style="color: #3cab94 !important;"><i class="mdi mdi-arrow-right"></i> <span>Add
-                                                Transactions</span></a></h6>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Column -->
-                <!-- Column -->
                 <div class="col-md-6 col-lg-6 col-xl-6">
                     <div class="card m-b-30">
                         <div class="card-body">
@@ -100,66 +79,16 @@
                                 </div>
                                 <div class="col-6 align-self-center text-center">
                                     <div class="m-l-10">
-                                        <h5 class="mt-0 round-inner">$32874</h5>
-                                        <p class="mb-0 text-muted">My Platforms</p>
+                                        <h5 class="mt-0 round-inner">{{ $projects }}</h5>
+                                        <p class="mb-0 text-muted">All Projects</p>
                                     </div>
-                                </div>
-                                <div class="col-3 align-self-end align-self-center">
-                                    <h6 class="m-0 float-right text-center text-success"><a href=""
-                                            style="color: #3cab94 !important;"><i class="mdi mdi-arrow-right"></i> <span>Add
-                                                Platforms</span></a></h6>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-xl-6">
-                    <div class="card m-b-30">
-                        <div class="card-body">
-                            <div class="d-flex flex-row">
-                                <div class="col-3 align-self-center">
-                                    <div class="round"><i class="mdi mdi-rename-box"></i></div>
-                                </div>
-                                <div class="col-6 align-self-center text-center">
-                                    <div class="m-l-10">
-                                        <h5 class="mt-0 round-inner">$32874</h5>
-                                        <p class="mb-0 text-muted">My Projects</p>
-                                    </div>
-                                </div>
-                                <div class="col-3 align-self-end align-self-center">
-                                    <h6 class="m-0 float-right text-center text-success"><a href=""
-                                            style="color: #3cab94 !important;"><i class="mdi mdi-arrow-right"></i> <span>Add
-                                                Projects</span></a></h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-6">
-                    <div class="card m-b-30">
-                        <div class="card-body">
-                            <div class="d-flex flex-row">
-                                <div class="col-3 align-self-center">
-                                    <div class="round"><i class="mdi mdi-rocket"></i></div>
-                                </div>
-                                <div class="col-6 align-self-center text-center">
-                                    <div class="m-l-10">
-                                        <h5 class="mt-0 round-inner">$32874</h5>
-                                        <p class="mb-0 text-muted">My investments</p>
-                                    </div>
-                                </div>
-                                <div class="col-3 align-self-end align-self-center">
-                                    <h6 class="m-0 float-right text-center text-success"><a href=""
-                                            style="color: #3cab94 !important;"><i class="mdi mdi-arrow-right"></i> <span>Add
-                                                investments</span></a></h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Column -->
             </div>
         </div>
-        <!-- container -->
+    </div>
     </div>
 @endsection

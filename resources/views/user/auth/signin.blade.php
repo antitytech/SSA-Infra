@@ -9,14 +9,15 @@
     <meta content="Admin Dashboard" name="description">
     <meta content="Mannatthemes" name="author">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="{{asset('panel')}}/assets/images/favicon.ico">
-    <link href="{{asset('panel')}}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="{{asset('panel')}}/assets/css/icons.css" rel="stylesheet" type="text/css">
-    <link href="{{asset('panel')}}/assets/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="{{ asset('images/ssa.png') }}">
+    <link href="{{ asset('panel') }}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('panel') }}/assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('panel') }}/assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-
     alpha/css/bootstrap.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </head>
 
@@ -26,62 +27,73 @@
         <div class="card">
             <div class="card-body">
                 <h3 class="text-center mt-0 m-b-15">
-                    <a href="/" class="logo logo-admin"><b><h2>Login</h2></b></a>
+                    <a href="/" class="logo logo-admin"><b>
+                            <h2>Login</h2>
+                        </b></a>
                 </h3>
                 <div class="p-3">
                     <form action="/user/authenticate" method="POST">
-                        @if(session('error'))
-                        <div class="alert alert-danger m-4 text-center ml-3">
-                            {{ session('error')}}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
+                        @if (session('error'))
+                            <div class="alert alert-danger m-4 text-center ml-3">
+                                {{ session('error') }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
                         @endif
                         @csrf
                         <div class="form-group row">
-                            <div class="col-12"><input class="form-control" type="email" required="" name="email" placeholder="Email"></div>
+                            <div class="col-12"><input class="form-control" type="email" required=""
+                                    name="email" placeholder="Email"></div>
                             @if ($errors->has('email'))
-                            <span class="text-danger">{{ $errors->first('email') }}</span>
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
                             @endif
                         </div>
                         <div class="form-group row">
-                            <div class="col-12"><input class="form-control" type="password" required="" name="password" placeholder="Password"></div>
+                            <div class="col-12"><input class="form-control" type="password" required=""
+                                    name="password" placeholder="Password"></div>
                             @if ($errors->has('password'))
-                            <span class="text-danger">{{ $errors->first('password') }}</span>
+                                <span class="text-danger">{{ $errors->first('password') }}</span>
                             @endif
                         </div>
 
                         <div class="form-group text-center row m-t-20">
-                            <div class="col-12"><button class="btn btn-danger btn-block waves-effect waves-light" type="submit">Login</button></div>
+                            <div class="col-6" style="margin-left: auto; margin-right: auto;"><button
+                                    class="btn btn-danger btn-block waves-effect waves-light"
+                                    type="submit">Login</button></div>
                         </div>
                         <div class="form-group text-center row m-t-20">
-                            <div class="col-12"><a class="btn btn-danger btn-block waves-effect waves-light" href="{{ url('auth/linkedin') }}"><i class="mdi mdi-linkedin-box"></i> Sign in with LinkedIn</a></div>
-                        </div>
-                        <div class="form-group text-center row m-t-20">
-                            <div class="col-12"><a class="btn btn-danger btn-block waves-effect waves-light" href="{{ url('auth/google') }}" ><i class="mdi mdi-google"></i>  Sign in with Google</a></div>
+                            <div class="col-6"><a href="{{ route('social.oauth', 'google') }}"><img
+                                        src="{{ asset('images/Google__G__Logo.svg.png') }}" height="50px"
+                                        alt="Google"></a></div>
+                            <div class="col-6"><a href="{{ route('social.oauth', 'linkedin') }}"><img
+                                        src="{{ asset('images/linkedin.png') }}" height="50px" alt="Linkedin"></a>
+                            </div>
                         </div>
                         <div class="form-group m-t-10 mb-0 row">
-                            <div class="col-sm-7 m-t-20"><a href="/user/forget-password" class="text-muted"><i class="mdi mdi-lock"></i> <small>Forgot your password ?</small></a></div>
-                            <div class="col-sm-5 m-t-20"><a href="/user/register" class="text-muted"><i class="mdi mdi-account-circle"></i> <small>Create an account ?</small></a></div>
+                            <div class="col-sm-7 m-t-20"><a href="/user/forget-password" class="text-muted"><i
+                                        class="mdi mdi-lock"></i> <small>Forgot your password ?</small></a></div>
+                            <div class="col-sm-5 m-t-20"><a href="/user/register" class="text-muted"><i
+                                        class="mdi mdi-account-circle"></i> <small>Create an account ?</small></a></div>
                         </div>
                     </form>
+                    {{-- <iframe src = "https://maps.google.com/maps?q=28.4253973,70.3319991&hl=es;z=14&amp;output=embed"></iframe> --}}
                 </div>
             </div>
         </div>
     </div>
-    <script src="{{asset('panel')}}/assets/js/jquery.min.js"></script>
-    <script src="{{asset('panel')}}/assets/js/popper.min.js"></script>
-    <script src="{{asset('panel')}}/assets/js/bootstrap.min.js"></script>
-    <script src="{{asset('panel')}}/assets/js/modernizr.min.js"></script>
-    <script src="{{asset('panel')}}/assets/js/detect.js"></script>
-    <script src="{{asset('panel')}}/assets/js/fastclick.js"></script>
-    <script src="{{asset('panel')}}/assets/js/jquery.slimscroll.js"></script>
-    <script src="{{asset('panel')}}/assets/js/jquery.blockUI.js"></script>
-    <script src="{{asset('panel')}}/assets/js/waves.js"></script>
-    <script src="{{asset('panel')}}/assets/js/jquery.nicescroll.js"></script>
-    <script src="{{asset('panel')}}/assets/js/jquery.scrollTo.min.js"></script>
-    <script src="{{asset('panel')}}/assets/js/app.js"></script>
+    <script src="{{ asset('panel') }}/assets/js/jquery.min.js"></script>
+    <script src="{{ asset('panel') }}/assets/js/popper.min.js"></script>
+    <script src="{{ asset('panel') }}/assets/js/bootstrap.min.js"></script>
+    <script src="{{ asset('panel') }}/assets/js/modernizr.min.js"></script>
+    <script src="{{ asset('panel') }}/assets/js/detect.js"></script>
+    <script src="{{ asset('panel') }}/assets/js/fastclick.js"></script>
+    <script src="{{ asset('panel') }}/assets/js/jquery.slimscroll.js"></script>
+    <script src="{{ asset('panel') }}/assets/js/jquery.blockUI.js"></script>
+    <script src="{{ asset('panel') }}/assets/js/waves.js"></script>
+    <script src="{{ asset('panel') }}/assets/js/jquery.nicescroll.js"></script>
+    <script src="{{ asset('panel') }}/assets/js/jquery.scrollTo.min.js"></script>
+    <script src="{{ asset('panel') }}/assets/js/app.js"></script>
     <script>
         @if (Session::has('message'))
             toastr.options =

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Company;
+use App\Models\Employees;
+use App\Models\Profile;
+use App\Models\RequestProject;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -15,7 +19,10 @@ class AdminController extends Controller
     public function index()
     {
         $users = DB::table('users')->count();
-        return view('admin.index', compact('users'));
+        $individual = User::where('role', 'Individual')->count();
+        $Company = User::where('role', 'Company')->count();
+        $projects = RequestProject::count();
+        return view('admin.index', compact('users', 'individual', 'Company', 'projects'));
     }
     public function register()
     {
@@ -30,6 +37,27 @@ class AdminController extends Controller
         $user = User::get();
         return view('admin.users.users', compact('user'));
     }
+    public function individualusers()
+    {
+        $user = User::where('role','Individual')->get();
+        return view('admin.users.individual', compact('user'));
+    }
+    public function companyusers()
+    {
+        $user = User::where('role','Company')->get();
+        return view('admin.users.company', compact('user'));
+    }
+    public function individualProfile($id)
+    {
+        $user = Profile::where('user_id', $id)->get();
+        return view('admin.users.profile', compact('user'));
+    }
+    public function companyProfile($id)
+    {
+        $user = Company::where('user_id', $id)->get();
+        return view('admin.users.companyprofile', compact('user'));
+    }
+
     public function forget()
     {
         return view('admin.auth.forget');
@@ -57,7 +85,8 @@ class AdminController extends Controller
     }
     public function management()
     {
-        return view('admin.management.table');
+        $projects = RequestProject::get();
+        return view('admin.management.table', compact('projects'));
     }
     public function profile()
     {
@@ -68,7 +97,7 @@ class AdminController extends Controller
     {
         Auth::logout();
         Session::flush();
-        return redirect('/admin/login');
+        return redirect('/admin/login/get-admin-login');
     }
     public function store(Request $request)
     {
@@ -96,8 +125,8 @@ class AdminController extends Controller
 
         $credentials = $request->only('email', 'password');
 
-        if (Auth::guard('admin')->attempt($credentials)) {
-            return redirect('/admin/dashboard');
+        if (Auth::guard('web')->attempt($credentials)) {
+            return redirect('/admin/dashboard/get-admin-dashboard');
         }
         return redirect()->back()->with('error', 'Email or Password is Invalid!');
     }
@@ -121,6 +150,27 @@ class AdminController extends Controller
             return redirect()->back()->with('message', 'Status Updated Successfully!');
         }
     }
+    public function employee0(Request $request)
+    {
+        $update_id = $request->id;
+        if (isset($update_id) && $update_id > 0) {
+            $userr = Employees::find($update_id);
+            $userr->status = 0;
+            $userr->save();
+            return redirect()->back()->with('message', 'Status Updated Successfully!');
+        }
+    }
+    public function employee1(Request $request)
+    {
+        $update_id = $request->id;
+        if (isset($update_id) && $update_id > 0) {
+            $userr = Employees::find($update_id);
+            $userr->status = 1;
+            $userr->save();
+            return redirect()->back()->with('message', 'Status Updated Successfully!');
+        }
+    }
+
     public function profile0(Request $request)
     {
         $update_id = $request->id;

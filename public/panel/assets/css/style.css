@@ -49,7 +49,7 @@ File: Main Css File
 ===================*/
 
 body {
-    background: #eff3f6;
+    background: #ffffff;
     font-family: "Rubik", sans-serif;
     margin: 0;
     font-size: 15px;
@@ -59,7 +59,7 @@ html {
     overflow-x: hidden;
     position: relative;
     min-height: 100%;
-    background: #eff3f6;
+    background: #ffffff;
 }
 
 h1,
@@ -189,7 +189,7 @@ code {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #eff3f6;
+    background-color: #ffffff;
     z-index: 9999999;
 }
 
@@ -428,14 +428,14 @@ code {
     font-size: 15px;
     -webkit-box-shadow: 0 2px 30px rgba(0, 0, 0, 0.08);
     box-shadow: 0 2px 30px rgba(0, 0, 0, 0.08);
-    border-color: #eff3f6;
+    border-color: #ffffff;
 }
 
 .dropdown-item.active,
 .dropdown-item:active {
     color: #2d3b48;
     text-decoration: none;
-    background-color: #eff3f6;
+    background-color: #ffffff;
 }
 
 .dropdown-item {
@@ -507,7 +507,7 @@ code {
 }
 
 .badge-default {
-    background-color: #eff3f6;
+    background-color: #ffffff;
     color: #2d3b48;
 }
 
@@ -1060,14 +1060,14 @@ code {
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 15px;
-    background: #eff3f6;
+    background: #ffffff;
     border: 1px solid;
     border-color: #dddddd;
     display: block;
 }
 
 .grid-col .nested-col.row span {
-    background-color: #eff3f6;
+    background-color: #ffffff;
     display: block;
 }
 
@@ -1384,6 +1384,20 @@ code {
     background-color: #171515;
 }
 
+.Platform_btn {
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.Platform_btn:hover {
+    color: red;
+    background: white;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
 
 /* ==============
   Card
@@ -1391,13 +1405,20 @@ code {
 
 .card {
     border: none;
-    -webkit-box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.05);
-    box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 0px 10px 0px #aaa;
 }
 
 .card-primary {
     background-color: #5b6be8;
     border-color: #5b6be8;
+}
+
+.cardsss {
+    width: 45rem;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card-success {
@@ -1441,7 +1462,7 @@ code {
 .page-link:focus,
 .page-link:hover {
     color: #2d3b48;
-    background-color: #eff3f6;
+    background-color: #ffffff;
 }
 
 
@@ -1613,8 +1634,8 @@ code {
 ============= */
 
 .custom-dd .dd-list .dd-item .dd-handle {
-    background: #eff3f6;
-    border: 1px solid #eff3f6;
+    background: #ffffff;
+    border: 1px solid #ffffff;
     padding: 10px 16px;
     height: auto;
     font-size: 15px;
@@ -1887,7 +1908,7 @@ code {
 .ct-chart .ct-series.ct-series-g .ct-line,
 .ct-chart .ct-series.ct-series-g .ct-point,
 .ct-chart .ct-series.ct-series-g .ct-slice-donut {
-    stroke: #eff3f6;
+    stroke: #ffffff;
 }
 
 .ct-series-a .ct-area,
@@ -1999,7 +2020,7 @@ th {
 .table-hover tbody tr:hover,
 .table-striped tbody tr:nth-of-type(odd),
 .thead-default th {
-    background-color: #eff3f6;
+    background-color: #ffffff;
 }
 
 
@@ -2107,7 +2128,7 @@ table.focus-on tbody tr.focused td {
 }
 
 .table-rep-plugin .checkbox-row input[type="checkbox"]:disabled+label::before {
-    background-color: #eff3f6;
+    background-color: #ffffff;
     cursor: not-allowed;
 }
 
@@ -2210,7 +2231,7 @@ label {
 
 .input-group-addon {
     border-radius: 2px;
-    border: 1px solid #eff3f6;
+    border: 1px solid #ffffff;
 }
 
 
@@ -2333,7 +2354,7 @@ label {
 
 :not(pre)>code[class*="language-"],
 pre[class*="language-"] {
-    background: #eff3f6;
+    background: #ffffff;
 }
 
 
@@ -2431,7 +2452,7 @@ pre[class*="language-"] {
 
 .mce-panel {
     border-color: #dfe7ed !important;
-    background-color: #eff3f6 !important;
+    background-color: #ffffff !important;
 }
 
 .mce-menu-item:hover,
@@ -2495,7 +2516,7 @@ pre[class*="language-"] {
 
 .note-editor .note-toolbar {
     background-color: #f3f3f3;
-    border-bottom: 1px solid #eff3f6;
+    border-bottom: 1px solid #ffffff;
     margin: 0;
 }
 
@@ -2510,7 +2531,7 @@ pre[class*="language-"] {
 }
 
 .note-editor.note-frame {
-    border: 1px solid #eff3f6;
+    border: 1px solid #ffffff;
 }
 
 .note-popover .popover .popover-content {
@@ -2570,7 +2591,7 @@ pre[class*="language-"] {
 
 .fc-widget-header {
     border: 1px solid #d5d5d5;
-    background-color: #eff3f6;
+    background-color: #ffffff;
 }
 
 .fc-widget-content {
@@ -2793,7 +2814,7 @@ pre[class*="language-"] {
 }
 
 #cd-timeline::before {
-    border-left: 3px solid #eff3f6;
+    border-left: 3px solid #ffffff;
     content: '';
     height: 100%;
     left: 18px;
@@ -2885,7 +2906,7 @@ pre[class*="language-"] {
 
 .cd-timeline-content {
     border-radius: 5px;
-    border: 1px solid #eff3f6;
+    border: 1px solid #ffffff;
     margin-left: 60px;
     padding: 1em;
     position: relative;
@@ -2952,7 +2973,7 @@ pre[class*="language-"] {
         top: 24px;
         left: 100%;
         border-color: transparent;
-        border-left-color: #eff3f6;
+        border-left-color: #ffffff;
     }
     .cd-timeline-content .cd-read-more {
         float: left;
@@ -2971,7 +2992,7 @@ pre[class*="language-"] {
         left: auto;
         right: 100%;
         border-color: transparent;
-        border-right-color: #eff3f6;
+        border-right-color: #ffffff;
     }
     .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
         float: right;
@@ -3012,7 +3033,7 @@ Invoice
 }
 
 .table>tbody>tr>.thick-line {
-    border-top: 2px solid #eff3f6;
+    border-top: 2px solid #ffffff;
 }
 
 
@@ -3023,7 +3044,7 @@ Invoice
 .gmaps,
 .gmaps-panaroma {
     height: 300px;
-    background: #eff3f6;
+    background: #ffffff;
     border-radius: 3px;
 }
 
@@ -3058,6 +3079,15 @@ Invoice
     border-left: 16px solid transparent;
     border-right: 16px solid transparent;
     border-bottom: 16px solid #5b6be8;
+}
+
+.Platform_image {
+    width: 350px !important;
+    height: 350px !important;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 180px;
 }
 
 
@@ -3150,7 +3180,7 @@ File: Menu
 
 .notification-list .noti-title {
     border-radius: 0.25rem 0.25rem 0 0;
-    background-color: #eff3f6;
+    background-color: #ffffff;
     margin: -4px 0px 0px 0px;
     width: auto;
     padding: 12px 20px;
@@ -3225,7 +3255,7 @@ File: Menu
 .notification-list .notify-all {
     border-radius: 0 0 0.25rem 0.25rem;
     margin: 0 0 -5px 0;
-    background-color: #eff3f6;
+    background-color: #ffffff;
 }
 
 .notification-list .profile-dropdown .notify-item {
@@ -3243,7 +3273,7 @@ File: Menu
 }
 
 .profile-dropdown {
-    width: 170px;
+    width: 210px;
 }
 
 .profile-dropdown i {
@@ -3505,7 +3535,7 @@ body.fixed-left .side-menu.left {
 }
 
 #sidebar-menu>ul>li.nav-active>a {
-    background-color: #eff3f6;
+    background-color: #ffffff;
 }
 
 #sidebar-menu>ul>li>a>span {

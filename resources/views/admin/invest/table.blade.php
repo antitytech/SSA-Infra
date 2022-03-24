@@ -9,7 +9,7 @@ Investments
             <div class="card-body">
                 <h4 class="mt-0 header-title">My Investments</h4>
                     <h4 style="text-align: right"><a href="" class="btn btn-success waves-effect waves-light">Add Investments</a></h4>
-                <table id="datatable-buttons" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <table style="display: block; width: 100%; overflow-x: auto;" id="datatable-buttons" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                         <tr>
                             <th>Name</th>

@@ -81,6 +81,7 @@
                                 <label for="">Tax residence</label>
                                 <select name="TaxResidence" class="select2 form-control mb-3 custom-select"
                                     style="width: 100%; height:36px;">
+                                    <option value="">Select an option</option>
                                     <option value="Afganistan">Afghanistan</option>
                                     <option value="Albania">Albania</option>
                                     <option value="Algeria">Algeria</option>
@@ -339,6 +340,7 @@
                                 <label for="">Country of residence</label>
                                 <select name="CountryResidence" class="select2 form-control mb-3 custom-select"
                                     style="width: 100%; height:36px;">
+                                    <option value="">Select an option</option>
                                     <option value="Afganistan">Afghanistan</option>
                                     <option value="Albania">Albania</option>
                                     <option value="Algeria">Algeria</option>
@@ -595,6 +597,7 @@
                                 <label for="">Primary citizenship</label>
                                 <select name="PrimaryCitizenship" class="select2 form-control mb-3 custom-select"
                                     style="width: 100%; height:36px;">
+                                    <option value="">Select an option</option>
                                     <option value="Afganistan">Afghanistan</option>
                                     <option value="Albania">Albania</option>
                                     <option value="Algeria">Algeria</option>
@@ -846,9 +849,6 @@
                                     <span class="text-danger">{{ $errors->first('PrimaryCitizenship') }}</span>
                                 @endif
                             </div>
-                            @if ($errors->has('title'))
-                                <span class="text-danger">{{ $errors->first('title') }}</span>
-                            @endif
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-6 col-md-6 col-sm-12">
@@ -863,51 +863,57 @@
                                 <label for="">Address line 1</label>
                                 <input class="form-control" type="text"  name="Addressline1"
                                     placeholder="Enter Address line 1">
+                                    @if ($errors->has('Addressline1'))
+                                    <span class="text-danger">{{ $errors->first('Addressline1') }}</span>
+                                @endif
                             </div>
-                            @if ($errors->has('title'))
-                                <span class="text-danger">{{ $errors->first('title') }}</span>
-                            @endif
+                           
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <label for="">Address line 2</label>
                                 <input class="form-control" type="text"  name="Addressline2"
                                     placeholder="Enter Address line 2">
+                                    @if ($errors->has('Addressline2'))
+                                    <span class="text-danger">{{ $errors->first('Addressline2') }}</span>
+                                @endif
                             </div>
-                            @if ($errors->has('password'))
-                                <span class="text-danger">{{ $errors->first('password') }}</span>
-                            @endif
+                          
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <label for="">City / Town</label>
                                 <input class="form-control" type="text" name="City" placeholder="Enter City / Town">
-                            </div>
-                            @if ($errors->has('title'))
-                                <span class="text-danger">{{ $errors->first('title') }}</span>
+                                @if ($errors->has('City'))
+                                <span class="text-danger">{{ $errors->first('City') }}</span>
                             @endif
+                            </div>
+                         
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <label for="">Zip / Postal code</label>
                                 <input class="form-control" type="text"  name="Zip"
                                     placeholder="Enter Zip / Postal code">
+                                    @if ($errors->has('Zip'))
+                                    <span class="text-danger">{{ $errors->first('Zip') }}</span>
+                                @endif
                             </div>
-                            @if ($errors->has('password'))
-                                <span class="text-danger">{{ $errors->first('password') }}</span>
-                            @endif
+                        
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <label for="">State / Province / Region</label>
                                 <input class="form-control" type="text"  name="State"
                                     placeholder="Enter State / Province / Region">
+                                    @if ($errors->has('State'))
+                                    <span class="text-danger">{{ $errors->first('State') }}</span>
+                                @endif
                             </div>
-                            @if ($errors->has('title'))
-                                <span class="text-danger">{{ $errors->first('title') }}</span>
-                            @endif
+                          
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <label for="">Country</label>
                                 <select name="Country" class="select2 form-control mb-3 custom-select"
                                     style="width: 100%; height:36px;">
+                                    <option value="">Select an option</option>
                                     <option value="Afganistan">Afghanistan</option>
                                     <option value="Albania">Albania</option>
                                     <option value="Algeria">Algeria</option>
@@ -1163,16 +1169,18 @@
                                 <label for="">Passport</label>
                                 <input class="form-control" type="file"  name="Passport" placeholder="Passport"
                                     multiple>
-                            </div>
-                            @if ($errors->has('Passport'))
+                                    @if ($errors->has('Passport'))
                                 <span class="text-danger">{{ $errors->first('Passport') }}</span>
                             @endif
+                            </div>
+                            
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <label for="">Roles</label>
                                 <select name="ROLES" class="select2 form-control mb-3 custom-select"
                                     style="width: 100%; height:36px;">
+                                    <option value="">Select an option</option>
                                     <option value="Project Developer">Project Developer</option>
                                     <option value="Asset Owner">Asset Owner</option>
                                     <option value="Investor">Investor</option>
@@ -1186,8 +1194,8 @@
                                     <option value="Taxes">Taxes</option>
                                     <option value="Investor">Credit rating</option>
                                 </select>
-                                @if ($errors->has('TaxResidence'))
-                                    <span class="text-danger">{{ $errors->first('TaxResidence') }}</span>
+                                @if ($errors->has('ROLES'))
+                                    <span class="text-danger">{{ $errors->first('ROLES') }}</span>
                                 @endif
                             </div>
                         </div>
@@ -1230,9 +1238,6 @@
             $('#datatable2').DataTable();
         });
     </script>
-@endsection
-
-@section('extra-scripts')
     <script>
         @if (Session::has('message'))
             toastr.options =

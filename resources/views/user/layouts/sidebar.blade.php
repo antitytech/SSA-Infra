@@ -1,19 +1,18 @@
 <div class="left side-menu"><button type="button"
         class="button-menu-mobile button-menu-mobile-topbar open-left waves-effect"><i
             class="ion-close"></i></button>
-    <!-- LOGO -->
     <div class="topbar-left">
-        <div class="text-center"><a href="index.html" class="logo"><i class="mdi mdi-assistant"></i> SSA
-                INFRA</a>
+        <div class="text-center"><a href="/" class="logo"><img src="{{ asset('images/ssa.png') }}"
+                    style="height: 100px; " alt=""></a>
         </div>
     </div>
     <div class="sidebar-inner slimscrollleft">
         <div id="sidebar-menu">
             <ul>
-                <li class="menu-title">Main</li>
+
                 <li><a href="{{ route('dashboard') }}" class="waves-effect"><i class="mdi mdi-airplay"></i>
                         <span>Dashboard</span></a></li>
-                <li><a href="{{ route('company') }}" class="waves-effect"><i class="mdi mdi-lumx"></i> <span>My
+                <li><a href="{{ route('mycompany') }}" class="waves-effect"><i class="mdi mdi-lumx"></i> <span>My
                             Company</span></a></li>
                 <li><a href="{{ route('platforms') }}" class="waves-effect"><i class="mdi mdi-poll-box"></i><span>My
                             Platforms</span></a></li>
@@ -33,5 +32,4 @@
         </div>
         <div class="clearfix"></div>
     </div>
-    <!-- end sidebarinner -->
 </div>

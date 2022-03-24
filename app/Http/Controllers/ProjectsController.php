@@ -12,9 +12,9 @@ class ProjectsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function addprojects()
     {
-        //
+        return view('user.projects.allfiles');
     }
 
     /**
